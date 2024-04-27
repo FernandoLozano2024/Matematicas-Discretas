@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Combinaciones</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            width: 200%;
+            /* Ajusta el ancho según sea necesario */
+            overflow-x: scroll;
+            /* Agrega una barra de desplazamiento vertical */
+            background-color: #e7f2f9;
+            /* Azul claro */
+        }
+        
+        #combinaciones-container {
+            margin-top: 200px;
+            /* Ajusta este valor según tu preferencia */
+            margin-left: 10px;
+            /* Ajuste de la posición */
+        }
+        
+        #contenedor-bruijn {
+            top: 10px;
+            left: 10px;
+        }
+        
+        #contenedor-bruijn table {
+            border-collapse: collapse;
+        }
+        
+        #contenedor-bruijn table td {
+            border: 1px solid black;
+            padding: 5px;
+            background-color: white;
+        }
+        
+        #contenedor-bruijn table .pintado {
+            background-color: blue;
+            color: white;
+        }
+        
+        #contenedor-tabla {
+            margin-bottom: 20px;
+            margin-left: 10px;
+        }
+        
+        #contenedor-tabla table {
+            border-collapse: collapse;
+        }
+        
+        #contenedor-tabla table td {
+            border: 1px solid black;
+            padding: 10px;
+            background-color: white;
+        }
+        
+        #contenedor-tabla table .pintado {
+            background-color: blue;
+            color: white;
+        }
+        
+        #combinaciones-container {
+            margin-top: 30px;
+            /* Espacio para la secuencia de De Bruijn */
+            margin-left: 10px;
+            /* Ajuste de la posición */
+            margin-bottom: 20px;
+            /* Espacio para evitar superposición con la secuencia de De Bruijn */
+        }
+        
+        #combinaciones-container table {
+            border-collapse: collapse;
+        }
+        
+        #combinaciones-container table th,
+        #combinaciones-container table td {
+            padding: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        #tabla-contador {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            border: 1px solid black;
+            padding: 10px;
+            background-color: #f2f2f2;
+        }
+        
+        #tabla-contador table {
+            border-collapse: collapse;
+        }
+        
+        #tabla-contador th,
+        #tabla-contador td {
+            padding: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        #combinaciones-container {
+            margin-top: 200px;
+            /* Ajusta este valor según tu preferencia */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenedor-bruijn">
+        <h1>Secuencia de n1 a n10 </h1>
+        <label for="orden">Orden:</label>
+        <input type="number" id="orden" min="1" step="1">
+        <button onclick="generarCombinaciones()" class="btn btn-primary mt-1">Generar Combinaciones</button>
+        <div id="contenedor-tabla"></div>
+    </div>
+
+    <div id="combinaciones-container">
+        <h1>Total de Combinaciones</h1>
+        <label for="numeroN">Número de Elementos (n):</label>
+        <input type="number" id="numeroN" min="1">
+        <button onclick="generarCombinaciones()" class="btn btn-primary mt-2">Generar Combinaciones</button>
+        <ul id="resultado"></ul>
+        <table id="combinaciones"></table>
+        <tr>
+
+        </tr>
+        </table>
+    </div>
+
+    <div id="tabla-contador">
+        <table>
+            <tr>
+                <th>Número</th>
+                <th>Total de combinaciones</th>
+                <th>Tiempo total</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td id="combinaciones1"></td>
+                <td id="tiempo1"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td id="combinaciones2"></td>
+                <td id="tiempo2"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td id="combinaciones3"></td>
+                <td id="tiempo3"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td id="combinaciones4"></td>
+                <td id="tiempo4"></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td id="combinaciones5"></td>
+                <td id="tiempo5"></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td id="combinaciones6"></td>
+                <td id="tiempo6"></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td id="combinaciones7"></td>
+                <td id="tiempo7"></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td id="combinaciones8"></td>
+                <td id="tiempo8"></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td id="combinaciones9"></td>
+                <td id="tiempo9"></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td id="combinaciones10"></td>
+                <td id="tiempo10"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
